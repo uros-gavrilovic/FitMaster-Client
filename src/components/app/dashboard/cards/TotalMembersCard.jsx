@@ -42,7 +42,7 @@ export default function TotalMembersCard(props) {
                 ACTIVE
                 <br />
                 <a style={{ fontSize: "2rem", fontWeight: "bold" }}>
-                  {stats?.active_members}
+                  {stats?.activeCount}
                 </a>
               </Typography>
 
@@ -56,7 +56,7 @@ export default function TotalMembersCard(props) {
                 INACTIVE
                 <br />
                 <a style={{ fontSize: "2rem", fontWeight: "bold" }}>
-                  {stats?.inactive_members}
+                  {stats?.inactiveCount}
                 </a>
               </Typography>
             </div>

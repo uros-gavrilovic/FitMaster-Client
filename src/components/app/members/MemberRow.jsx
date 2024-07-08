@@ -74,7 +74,7 @@ const MemberRow = (props) => {
           ) : memberState?.status === memberStatus.INACTIVE ? (
             <OkayStatus>{t?.fields?.inactive?.toUpperCase()}</OkayStatus>
           ) : memberState?.status === memberStatus.BANNED ? (
-            <BadStatus>{t?.fields?.bad?.toUpperCase()}</BadStatus>
+            <BadStatus>{t?.fields?.banned?.toUpperCase()}</BadStatus>
           ) : (
             <NeutralStatus>{t?.fields?.pending?.toUpperCase()}</NeutralStatus>
           )}
