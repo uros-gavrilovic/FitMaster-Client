@@ -10,7 +10,7 @@ import CancelIcon from "@mui/icons-material/Cancel";
 import ConfirmModal from "../../../reusable/modals/ConfirmModal";
 import { validateField } from "../../../../utils/utilFunctions";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
-import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFnsV3";
 import * as membersActions from "../../../../actions/members";
 import { useSelector } from "react-redux";
 

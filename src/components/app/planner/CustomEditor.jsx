@@ -4,7 +4,7 @@ import { validateField } from "../../../utils/utilFunctions";
 import { Button, DialogActions, TextField } from "@mui/material";
 import Box from "@mui/material/Box";
 import { LocalizationProvider } from "@mui/x-date-pickers";
-import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFnsV3";
 import PersonSearchIcon from "@mui/icons-material/PersonSearch";
 import MemberChooserModal from "../workout-plans/MemberChooserModal";
 import withTranslations from "../../../utils/HighOrderComponent";

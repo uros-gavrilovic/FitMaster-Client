@@ -11,7 +11,7 @@ import {
 import * as membersActions from "../../../actions/members";
 import { useDispatch } from "react-redux";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
-import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFnsV3";
 // import IconButton from "../../reusable/buttons/IconButton";
 import IconButton from "@mui/material/IconButton";
 import withTranslations from "../../../utils/HighOrderComponent";

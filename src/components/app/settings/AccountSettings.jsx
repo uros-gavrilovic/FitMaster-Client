@@ -8,7 +8,7 @@ import { useState } from "react";
 import TextField from "@mui/material/TextField";
 import CustomSelect from "../../reusable/inputFields/CustomSelect";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
-import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFnsV3";
 import Avatar from "@mui/material/Avatar";
 import {
   convertEmptyFieldsToNull,
