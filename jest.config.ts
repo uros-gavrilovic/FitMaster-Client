@@ -1,22 +1,11 @@
-export { };
 module.exports = {
-	collectCoverage: true,
-	collectCoverageFrom: ['src/**/*.{ts,tsx}', '!src/**/*.d.ts',
-		'!**/vendor/**'],
-	coverageDirectory: 'coverage',
-	testEnvironment: 'jsdom',
+	preset: 'ts-jest',
 	transform: {
-		".(ts|tsx)": "ts-jest"
+		'^.+\\.(ts|tsx)?$': 'ts-jest',
+		'^.+\\.(js|jsx)$': 'babel-jest',
 	},
-
-	coveragePathIgnorePatterns: [
-		"/node_modules/",
-		"/coverage",
-		"package.json",
-		"package-lock.json",
-		"reportWebVitals.ts",
-		"setupTests.ts",
-		"index.tsx"
-	],
-	setupFilesAfterEnv: ['<rootDir>/setupTests.ts'],
+	moduleNameMapper: {
+		'\\.(css|less)$': '<rootDir>/test/jest/mocks/styleMocks.js',
+	},
+	testEnvironment: 'jsdom',
 };
