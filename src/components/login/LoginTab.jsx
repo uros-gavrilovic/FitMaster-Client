@@ -7,11 +7,19 @@ import { useDispatch } from "react-redux";
 import * as userActions from "../../actions/user";
 import { Box, Button } from "@mui/material";
 import Logo from "../reusable/Logo";
-// import IconButton from "../reusable/buttons/IconButton";
-import IconButton from "@mui/material/IconButton";
 import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
 import LoginIcon from "@mui/icons-material/Login";
 import { useTheme } from "@emotion/react";
+
+export function dispatchLogIn(username, password, t, dispatch) {
+	dispatch(userActions.login(
+		{
+			username,
+			password,
+		},
+		t?.messages
+	));
+}
 
 export default function LoginTab(props) {
   const { t, handleTabChange } = props || {};
@@ -27,7 +35,7 @@ export default function LoginTab(props) {
     password: false,
   });
 
-  const handleLogIn = () => {
+const handleLogIn = () => {
     const hasUsernameError = validateField(
       loginState.username,
       "username",
@@ -39,15 +47,7 @@ export default function LoginTab(props) {
       setLoginErrorState
     );
     if (hasUsernameError || hasPasswordError) return;
-    dispatch(
-      userActions.login(
-        {
-          username: loginState.username,
-          password: loginState.password,
-        },
-        t?.messages
-      )
-    );
+    dispatchLogIn(loginState.username, loginState.password, t, dispatch);
   };
 
   return (
@@ -63,6 +63,7 @@ export default function LoginTab(props) {
       {t?.titleLogIn}
       <IconTextField
         id="username"
+        inputProps={{ "data-testid": "username" }}
         title={t?.input?.username}
         icon={<AccountCircle sx={{ mr: 1, my: 0.5 }} />}
         required
@@ -77,6 +78,7 @@ export default function LoginTab(props) {
       />
       <IconTextField
         id="password"
+        inputProps={{ "data-testid": "password" }}
         title={t?.input?.password}
         type="password"
         icon={<HttpsRoundedIcon sx={{ mr: 1, my: 0.5 }} />}
@@ -110,6 +112,7 @@ export default function LoginTab(props) {
           {t?.buttons?.btnRegister}
         </Button>
         <Button
+          data-testid="login-button"
           endIcon={<LoginIcon />}
           variant="contained"
           style={{ width: "100%" }}
